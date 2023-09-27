@@ -1,12 +1,10 @@
 #012
-num1 = input('Enter a number: ')
-num2 = input('Enter a second number: ')
+num1 = int(input('Enter a number: '))
+num2 = int(input('Enter a second number: '))
 if num1 > num2:
-    print(num2)
-    print(num1)
+    print(num2, ' ', num1)
 else:
-    print(num1)
-    print(num2)
+    print(num1, ' ', num2)
      
 #013
 num = int(input('Pick a number under 20: '))
@@ -24,18 +22,16 @@ else:
     
 #015
 colour = input('Enter your favourite colour: ')
-if colour == 'red' or 'RED' or 'Red':
+if colour.lower() == 'red':
     print('I like red too')
 else:
-    print("I don't like", colour, ", I prefer red")
+    print("I don't like", colour, "I prefer red")
 
 #016
-weather = input('Is ir raining?: ')
-weather.lower()
-if weather == 'yes':
+weather = input('Is it raining?: ')
+if weather.lower() == 'yes':
     wind = input('Is it windy?: ')
-    wind.lower()
-    if wind == 'yes':
+    if wind.lower() == 'yes':
         print('It is too windy for an umbrella ')
     else:
         print('Take an umbrella!')
