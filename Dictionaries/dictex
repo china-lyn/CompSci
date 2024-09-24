@@ -1,0 +1,31 @@
+while True:
+    s = input('Enter a sentence: ')
+    print('\nDo you want to find the FREQUENCY of: ') # user chooses the process
+    choice = input('1) Words in your sentence\n2) Charachters: ')
+    if choice == '1':
+        freq = {}
+        for word in s.lower().split(): # spliting the string every time there is a space to get words on own
+            if not freq.get(word):
+                freq[word] = 1 # defining key and value 
+            else:
+                freq[word] += 1  # adding to value if key already present
+        print('WORD\tCOUNT')
+        for word, count in freq.items(): # print key and value separately
+            print(f'{word}\t{count}')
+        print()
+    elif choice == '2':
+        freqc = {}
+        for charachter in s.lower():
+            if not freqc.get(charachter): # identifies if key in dictionary
+                freqc[charachter] = 1
+            else:
+                freqc[charachter] += 1 # adds to value when it is ther more than once
+        print('CHARCHTER\tCOUNT') # headings
+        for c, count in freqc.items():
+            print(f'{c}\t\t{count}') # print under headings
+        print()
+    else:
+        print('\nThat is not a valid input!') # allowance for error!!
+        pass
+
+
