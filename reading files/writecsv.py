@@ -47,6 +47,4 @@ with open('Books.csv', 'r') as f:
     for l in f:
         b, a, y = l.strip().split(',')
         if syear <= int(y) and eyear >= int(y):
-            print(b, y)
-
-    
+            print(b, y)    
