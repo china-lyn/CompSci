@@ -58,4 +58,13 @@ while True:
         print(f'The perimeter of a recatngle with height of {h} and width of {w} = {rperi}')
     else:
         print('That is not a valid input')
-        
+
+# 6
+
+def middle_char(s):
+    indexm = len(s) // 2 # middle charchter of a string
+    m = s[indexm]
+    return m
+    
+sentence = input('Type a sentence: ')
+print(f'The middle charachter of your sentence is: {middle_char(sentence)}')
