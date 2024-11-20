@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms examples</title>
+    </head>
+    <body>
+    <form>
+        <label for = 'fname'>First Name:</label>
+        <input type = 'text' id = 'fname' name = 'fname'><br> <!--br == break in line (like \n)-->
+        <label for = 'lname'>Last Name:</label>
+        <input type = 'text' id ='lname' name = 'lname'><br>
+ 
+        <label for = 'pwd'>Password</label>
+        <input type = 'password' id = 'pwd' required><br> <!--required means that if user doesnt enter a value it wont move on-->
+ 
+        <!--CHECKBOX-->
+        <input type = 'checkbox' id = 'vehicle1' name = 'vehicle1' value = 'Bike'> <!--VALUE == when you submit this is what gets sent-->
+        <label for = 'vehicle1'>I have a bike!</label><br>
+        <input type = 'checkbox' id = 'vehicle2' name = 'vehicle2' value = 'Car' checked = 'checked'> <!--CHECKED == checkbos is AlREADY ticked (default)-->
+        <label for = 'vehicle2'>I have a car!</label><br> <!--LABEL = how it is displayed--> <!--LABEL FOR and then the id of what you to display-->
+ 
+        <!--RADIO == one or the other-->
+        <input type = 'radio' id = 'male' name = 'gender' value = 'Male'.>
+        <label for = 'male'>Male</label><br>
+        <input type = 'radio' id = 'female' name = 'gender' value = 'Female' checked = 'checked'>
+        <label for = 'female'>Female</label><br>
+ 
+        <!--RESET-->
+        <input type = 'reset' value = 'reset'><br><br> <!--RESET BUTTON == resets the value on the form-->
+ 
+        <!--BUTTON-->
+        <input type = 'button' value = 'some kind of button'><br><br>
+ 
+        <!--DROP DOWN LIST-->
+        <select name = 'car'> <!--can change options--> 
+            <option>Volvo</option>
+            <option>Saab</option>
+            <option>Mercedes</option>
+            <option>Audi</option>
+        </select><br><br>
+ 
+        <input type = 'submit' value = 'Submit'><br> <!--SUBMIT BUTTON-->
+ 
+    </form>
+    </body>
+</html>

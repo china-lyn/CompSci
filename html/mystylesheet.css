@@ -1,0 +1,35 @@
+img {
+    width: 10cm;
+    height: 10cm;
+}
+ 
+ol {
+    background-color:rgb(208, 167, 247);
+}
+ 
+#first { 
+    color: rgb(51, 134, 106);
+}
+ 
+#info{
+    font-weight: bold;
+    font-size: larger;
+}
+ 
+#second{
+    background-color: rgb(155, 182, 233);
+}
+ 
+.styl{
+    font-size:6mm;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+ 
+}
+ 
+div {
+    border-style: dotted;
+    border-width: 3px;
+    border-radius: 27px;
+    border-color: rgb(224, 224, 253);
+}
