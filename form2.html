@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Form 2</title>
+
+
+    </head>
+    <body>
+        <form id="mainForm">
+            <textarea id="textArea1" name="textArea1" rows="2" cols="10"></textarea><br>
+            <label for="nameInput">Enter your name:</label>
+            <input type="text" name="nameInput" id="nameInput" required><br>
+            <label for="numInput">Enter your age:</label>
+            <input type="number" name="numInput" id="numInput" step="0.01"><br><!--let user put in values with 2 dec places -->
+            <label for="emailInput">Enter your email:</label>
+            <input type="email" name="emailInput" id="emailInput"><br>
+            
+            <label for="r1">a</label> <!--for must match the id for the value-->
+            <input type="radio" name="radio1" value="a" id="r1">
+            <label for="r2">b</label>
+            <input type="radio" name="radio1" value="b" id="r2"> <!--MUST HAVE SAME NAME FOR RADIO-->
+            <label for="r3">c</label>
+            <input type="radio" name="radio1" value="c" id="r3">
+
+            <button id="btn1" type="submit">Submit form</button> <!--preprogrammed action to do (send this form to server)-->
+    
+        </form>
+
+        <script>
+            let mainForm = document.getElementById('mainForm'); // listen for when button part of form is clicked on (type=submit)
+            mainForm.addEventListener('submit', handle_user_form_data);
+            let data_for_database = null; // empty handle - func will return data to this variable
+
+            function handle_user_form_data(event){ // callback function
+                event.preventDefault(); // dont send info to server!
+                //alert('handle_user_form_data has been called - NOT SENDING TO SERVER');
+                
+                data_for_database = process_form_input(mainForm);
+            }
+
+            function process_form_input(mainForm_elements){
+                let userInfo = {};
+                let formElements = mainForm_elements.elements; // gives elements in html form
+                console.log('The elements of the form are:\n');
+                console.log(formElements)   
+                console.log('The types of elements in the form are:\n');
+
+                for (i=0; i<formElements.length; i=i+1){
+                    console.log(formElements[i].type)
+
+                    if (formElements[i].type == 'submit'){
+                        continue;
+                    }
+                    else if(formElements[i].type == 'textarea'){
+                        userInfo[formElements[i].name] = formElements[i].value;
+                        console.log(userInfo);
+                    }
+                    else if(formElements[i].type == 'text'){
+                        userInfo[formElements[i].name] = formElements[i].value;
+                        console.log(userInfo);
+                    }
+                    else if(formElements[i].type == 'number'){
+                        userInfo[formElements[i].name] = formElements[i].value;
+                        console.log(userInfo);
+                    }
+                    else if(formElements[i].type == 'email'){
+                        userInfo[formElements[i].name] = formElements[i].value;
+                        console.log(userInfo);
+                    }
+                    else if(formElements[i].type == 'radio'){
+                        if (formElements[i].checked){
+                            userInfo[formElements[i].name] = formElements[i].value;
+                            console.log(userInfo);
+                        } 
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

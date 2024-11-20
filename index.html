@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Header</h1>
+        <p>This is a paragraph</p>
+        <label for="user_data_field">Enter some numbers here: </label><br>
+        <textarea id="user_data_field" name="user_data_field" rows="4" cols="20"></textarea>
+        <button id="user_submission">Submit data</button>
+        <script>
+            let user_data_susbmission = document.getElementById('user_submission');
+            user_data_susbmission.addEventListener('click', handle_user_data);
+            let user_data_dict = {};
+
+            function handle_user_data(){ // callback func (may or may not be called when webpage being used) = cannot return value
+                let user_data_values = document.getElementById('user_data_field');
+                console.log(user_data_values.value); // .value gets value of inputs tied to id
+                user_data_dict[user_data_values.name] = user_data_values.value //.name gets name identifying
+                console.log(user_data_dict); // holds key value pair in the console - links form and javascript together
+            
+            }
+        </script>
+    </body>
+</html>
