@@ -4,11 +4,11 @@
 from random import randint
 
 def numguess():
-    randomnum = randint(1, 100)
     userscore = 0 # initalising score
     guess = 0
     
     while True: # will run until the users guess is the secret number
+        randomnum = randint(1, 100)
         guess = int(input('Enter your guess: '))
         print(randomnum)
         if guess < randomnum: # this if loop finds the difference between users num and secret num
