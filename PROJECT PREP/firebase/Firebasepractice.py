@@ -31,13 +31,13 @@ with open('Firebase practice file - Python.csv', 'r') as f:
             imdb: l[12]
         }
         movies[f'Movie {row}'] = movie
-print(movies)
+#print(movies)
             
             
 ref.set(movies) # sets movie dictionary in database
 
 movie1 = ref.child('Movie 1').child(title).get()
-print(movie1)
+#print(movie1)
     
         
     
