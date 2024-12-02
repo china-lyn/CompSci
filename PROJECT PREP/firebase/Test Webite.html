@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Profile</title>
+    </head>
+ 
+    <body>
+        <form id='Form'>
+            <label for='name'>Enter your name:</label>
+            <input type='text' id='name' required><br>
+            <label for= 'age' >Enter your age:</label>
+            <input type='number' id='age'><br>
+            <label for= 'dob'>Enter your date of birth:</label>
+            <input type='month' id='dob'><br>
+            <label>Enter your fav colour:</label><br>
+
+            <label>
+                <input type ='radio' id='blue' name='colour' value='Blue'> Blue <!--For radio put input type before the label!!!!!!-->
+            </label>
+            <br>
+            <label>
+                <input type ='radio' id='pink' name='colour' value ='Pink'> Pink!
+            </label>
+            <br>
+            <label>
+                <input type ='radio' id='green' name='colour' value='Green'> Greeen
+            </label>
+            <br>
+ 
+            <input type='submit' value='submit'>
+        </form>
+ 
+        <script type='module'> // lets you import for js
+            
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+ 
+            const firebaseConfig = {
+                apiKey: "AIzaSyDoYRiDRAfUvQXMlsa6HL1t-lcYUMn5uj4",
+                authDomain: "lc-sandbox-c942a.firebaseapp.com",
+                databaseURL: "https://lc-sandbox-c942a-default-rtdb.europe-west1.firebasedatabase.app",
+                projectId: "lc-sandbox-c942a",
+                storageBucket: "lc-sandbox-c942a.firebasestorage.app",
+                messagingSenderId: "294122872388",
+                appId: "1:294122872388:web:517a9835b24d8b117b2611"
+            };
+            const app = initializeApp(firebaseConfig);
+
+            import { getDatabase, ref, set, get, update, child, query,orderByChild } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js";
+            const database = getDatabase(); //This creates a firebase instance
+            let link_to_database_root = ref(database); //This creates a reference (link) to the root of your database
+            //This will create a reference to whatever address comes after the comma
+            const firebaseRef = ref(database);
+
+            let addProfile = document.getElementById('Form'); // when submit button pressed adds Form profile to DS
+            addProfile.addEventListener('submit', add_datatoDS);
+                        
+            
+            let Form = document.getElementById('Form');  // getting html form into variable for use
+            Form.addEventListener('submit', dontSubmit); 
+ 
+            function dontSubmit(event){
+                event.preventDefault()
+                console.log('Prevented');
+ 
+            }
+ 
+            function add_datatoDS(){ // HERE WE MAKE FUNC TO SEND TO DATABASE
+                alert('sending data!!')
+                let Profile = {};
+                let name = document.getElementById('name'); // uses id to get the info from our html form
+                let age = document.getElementById('age');
+                let dob = document.getElementById('dob');
+                //let favcolour = document.getElementsByName('colour'); gets more than 1 element
+                const form = document.getElementById('Form');  // This gets the form where the radio is             
+
+                Profile['Name'] = name.value;
+                Profile['Age'] = age.value;
+                Profile['Date of Birth'] = dob.value;
+                Profile['Favourite Colour'] = form.colour.value; // this guy is different because its a radio so we have more values!!
+
+                update(ref(database, "Profiles"), Profile)
+
+            }
+ 
+
+        </script>
+    </body>
