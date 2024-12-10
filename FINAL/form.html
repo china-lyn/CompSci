@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Form</title>
+    </head>
+ 
+    <body>
+        <form id='Form'>
+            <label for='name'>Enter your name:</label>
+            <input type='text' id='name' name='name' required><br>
+            <label for='age'>Enter your age:</label>
+            <input type='number' id='age' name='age'><br>
+ 
+            <label>Enter your gender:</label><br>
+            <label>
+                <input type = 'radio' id='male' name='gender' value='Male'>Male
+            </label>
+            <br>
+            <label>
+                <input type = 'radio' id='female' name='gender' value='Female'>Female
+            </label>
+            <br>
+            <label>
+                <input type = 'radio' id='other' name='gender' value='Other'>Other
+            </label>
+            <br>
+ 
+            <label for='activity'>Enter the average minutes of physical activity you get per day:</label>
+            <input type='range' id='activity' min='0' max='300' name='activity'>
+            <span id='rangeValue'>50</span>
+            <span id='display'>mins</span> <br><br>
+ 
+            <!-- <label for='job'>Enter your profession:</label>
+            <input type='text' id='job' name='job'><br> -->
+ 
+            <input type="submit" value="SUBMIT">
+ 
+ 
+        </form>
+    </body>
+ 
+</html>
